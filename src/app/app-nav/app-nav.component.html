@@ -1,0 +1,49 @@
+<mat-sidenav-container
+    class="example-container" (backdropClick)="close('backdrop')">
+  <mat-sidenav #sidenav (keydown.escape)="close('escape')" disableClose>
+    <sidenav-head></sidenav-head>
+    <mat-list>
+      <h3 matSubheader>Allgemein</h3>
+      <mat-list-item [routerLink]="['/']" 
+      class="hoverable" 
+      matRipple [matRippleColor]="'rgba(0,0,0,0.3)'"> 
+        Übersicht 
+      </mat-list-item>
+    </mat-list>
+    <mat-divider></mat-divider>
+    <mat-list>
+      <h3 matSubheader>Pride day at the Zoo</h3>
+      <mat-list-item class="hoverable">
+          <mat-icon matListIcon>map</mat-icon>
+          <h4 matLine>Pläne</h4>
+      </mat-list-item>
+      <mat-list-item class="hoverable">
+          <mat-icon matListIcon>work</mat-icon>
+          <h4 matLine>Packlisten</h4>
+      </mat-list-item>
+      <mat-list-item class="hoverable">
+          <mat-icon matListIcon>timeline</mat-icon>
+          <h4 matLine>Ablaufplan</h4>
+      </mat-list-item>
+      <mat-list-item class="hoverable">
+          <mat-icon matListIcon>supervised_user_circle</mat-icon>
+          <h4 matLine>Volunteers</h4>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <h3 matSubheader>Notes</h3>
+      <mat-list-item *ngFor="let note of notes">
+          <mat-icon matListIcon>note</mat-icon>
+          <h4 matLine>{{note.name}}</h4>
+          <p matLine class="demo-2"> {{note.updated}} </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content style="height: 100vh;">
+    <mat-toolbar>
+      <mat-icon class="hoverable" aria-hidden="false" aria-label="Example user verified icon" (click)="sidenav.open()">menu</mat-icon>
+      <span>Dionysos</span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,62 @@
+@import '~@angular/material/theming';
+// Include non-theme styles for core.
+@include mat-core();
+
+// Define your application's custom theme.
+$primary: mat-palette($mat-indigo);
+$accent:  mat-palette($mat-pink, A200, A100, A400);
+$theme: mat-dark-theme($primary, $accent);
+
+$secondary-text: rgba(255, 255, 255, 0.8);
+$primary-text: rgba(255, 255, 255, 1);
+
+$secondary-text-dark: rgba($color: black, $alpha: 0.7);
+$primary-head: #2F3AA4;
+$primary-body: #192066;
+
+:host /deep/ {
+  mat-ink-bar{
+    background-color: white !important;
+  }
+
+  .mat-tab-list{
+    background-color: $primary-head;
+  }
+
+  .mat-tab-header {
+      border-bottom: 0px;
+      color: white;
+      box-shadow: 0 4px 3px -3px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 100000;
+  }
+
+  .mat-tab-label-content{
+    color: white;
+  }
+
+  .mat-toolbar{
+    background-color: $primary-head;
+    color: white;
+
+    .mat-icon{
+      margin-right: 16px;
+    }
+  }
+}
+
+.hoverable:hover{
+  cursor: pointer;
+}
+
+.text--secondary{
+  color: $secondary-text;
+  font-size: 0.95rem;
+}
+
+.text--secondary-dark{
+  color: $secondary-text-dark;
+  font-size: 0.95rem;
+}
+
+$height-withdout-nav: calc(100vh - 65px);

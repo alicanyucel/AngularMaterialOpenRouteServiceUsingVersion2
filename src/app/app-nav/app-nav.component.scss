@@ -1,0 +1,25 @@
+@import '../main-theme';
+
+mat-sidenav, 
+mat-sidenav.md-locked-open, 
+mat-sidenav.md-closed.md-locked-open-add-active {
+    min-width: 200px !important;
+    width: 66vw !important;
+    max-width: 400px !important;
+} 
+
+sidenav-head{
+  padding: 16px;
+  display: block;
+  padding-top: 32px;
+}
+
+mat-toolbar{
+  //box-shadow: 0 4px 3px -3px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+  position: relative;
+}
+
+mat-sidenav-content{
+      background-color: #192066;
+}
